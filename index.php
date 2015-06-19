@@ -1,3 +1,7 @@
+<?php 
+require_once 'config.php';
+?>
+
 <html>
 	<head>
 		<title>Gerenciador</title>
