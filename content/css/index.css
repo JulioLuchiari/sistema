@@ -1,0 +1,30 @@
+.fornecedor, 
+.produto
+{
+	width: 49%;
+	height: 500px;
+	border: 2px solid #e2e2e2;
+	transition: .5s ease-out;
+	margin: 3em 0;
+}
+
+.fornecedor:hover,
+.produto:hover
+{
+	background-color: #e2e2e2;
+}
+
+.fornecedor
+{
+	float:left;
+}
+
+.produto
+{
+	float:right;
+}
+
+.main
+{
+	overflow: hidden;
+}
