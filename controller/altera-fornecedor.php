@@ -5,17 +5,26 @@ require_once '../helper/validadores.php';
 require_once '../helper/validador-fornecedor.php';
 require_once 'post-fornecedor.php';
 
+if(isset($_POST['id']))
+{
+	$id = $_POST['id'];
+}
+else
+{
+	$erros += 1;
+}
+
 if($erros > 0)
 {
 	$_SESSION['erro'] = "Dados incorretos, verifique e tente novamente";
-	header("Location: ".base_url("formulario-fornecedor.php"));
+	header("Location: ".base_url("formulario-altera-fornecedor.php?id={$id}"));
 	die();
 }
 
 $dao = new FornecedorDAO($conn);
-if($dao->salva($fornecedor))
+if($dao->altera($id, $fornecedor))
 {
-	$_SESSION['sucesso'] = "Fornecedor cadastrado com sucesso!";
+	$_SESSION['sucesso'] = "Fornecedor alterado com sucesso!";
 	unset($_SESSION['cadastro_fornecedor']);
 	header("Location: ".base_url("fornecedor.php"));
 }

@@ -35,7 +35,43 @@
  	
  	public function busca($id)
  	{
- 		return NULL;
+ 		$id = mysqli_real_escape_string($this->conn, $id);
+ 		$resultado = $this->verificaFornecedor($id);
+ 		if($resultado)
+ 		{
+ 			$a = mysqli_fetch_assoc($resultado);
+ 		
+ 			$fornBuilder = new FornecedorBuilder();
+ 			$fornBuilder->comCnpj($a['forn_cnpj']);
+ 			$fornBuilder->comEmail($a['forn_email']);
+ 			$fornBuilder->comEndereco($a['forn_rua'], $a['forn_numero'], $a['forn_bairro'], $a['forn_cidade'], 
+ 									  $a['forn_uf'], $a['forn_pais'], $a['forn_cep'], $a['forn_complemento']);
+ 			$fornBuilder->comRazaoSocial($a['forn_razaosoc']);
+ 			$fornBuilder->comTelefone($a['forn_fone']);
+ 			$fornecedor = $fornBuilder->build();
+ 			$fornecedor->setId($id);
+ 				
+ 			return $fornecedor;
+ 		}
+ 		else
+ 		{
+ 			return false;
+ 		}
+ 	}
+ 	
+ 	public function verificaFornecedor($id)
+ 	{
+ 		$query = "SELECT * FROM fornecedores WHERE forn_id = '{$id}'";
+ 		$resultado = mysqli_query($this->conn, $query);
+ 			
+ 		if(mysqli_num_rows($resultado) != 1)
+ 		{
+ 			return false;
+ 		}
+ 		else 
+ 		{
+ 			return $resultado;
+ 		}
  	}
  	
  	public function salva(Fornecedor $fornecedor)
@@ -59,9 +95,36 @@
  		return mysqli_query($this->conn, $query);
  	}
  	
- 	public function altera($id)
+ 	public function altera($id, Fornecedor $f)
  	{
+ 		$id = mysqli_real_escape_string($this->conn, $id);
+ 		$resultado = $this->verificaFornecedor($id);
  		
+ 		if($resultado)
+ 		{
+ 			$cnpj = mysqli_real_escape_string($this->conn, $f->getCnpj());
+ 			$razaoSocial = mysqli_real_escape_string($this->conn, $f->getRazaoSocial());
+ 			$rua = mysqli_real_escape_string($this->conn, $f->getRua());
+ 			$numero = mysqli_real_escape_string($this->conn, $f->getNumero());
+ 			$complemento = mysqli_real_escape_string($this->conn, $f->getComplemento());
+ 			$cep = mysqli_real_escape_string($this->conn, $f->getCep());
+ 			$bairro = mysqli_real_escape_string($this->conn, $f->getBairro());
+ 			$cidade = mysqli_real_escape_string($this->conn, $f->getCidade());
+ 			$uf = mysqli_real_escape_string($this->conn, $f->getUf());
+ 			$pais = mysqli_real_escape_string($this->conn, $f->getPais());
+ 			$telefone = mysqli_real_escape_string($this->conn, $f->getTelefone());
+ 			$email = mysqli_real_escape_string($this->conn, $f->getEmail());
+ 			
+ 			$query = "UPDATE fornecedores SET forn_cnpj = '{$cnpj}' AND forn_razaosoc = '{$razaoSocial}' AND forn_rua = '{$rua}' "
+ 					."AND forn_numero = '{$numero}' AND forn_complemento = '{$complemento}' AND forn_cep = '{$cep}' AND forn_bairro = '{$bairro}' "
+ 					."AND forn_cidade = '{$cidade}' AND forn_uf = '{$uf}' AND forn_pais = '{$pais}' AND forn_fone = '{$telefone}' "
+ 					."AND forn_email = '{$email}' WHERE forn_id = {$id}";
+ 			return mysqli_query($this->conn, $query);
+ 		}
+ 		else
+ 		{
+ 			return false;
+ 		}
  	}
  	
  	public function deleta($id)

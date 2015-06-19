@@ -30,7 +30,7 @@ $fornecedores = $dao->buscaTodos();
 			<td><?php echo $fornecedor->getTelefone()?></td>
 			<td><?php echo $fornecedor->getEmail()?></td>
 			<td><a href="mostra-fornecedor.php?id=<?php echo $fornecedor->getId()?>">Visualizar</a></td>
-			<td><a href="alterar-fornecedor.php?id=<?php echo $fornecedor->getId()?>">Alterar</a></td>
+			<td><a href="formulario-altera-fornecedor.php?id=<?php echo $fornecedor->getId()?>">Alterar</a></td>
 		</tr>	
 	<?php endforeach;?>
 </table>
