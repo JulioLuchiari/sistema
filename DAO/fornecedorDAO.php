@@ -127,10 +127,17 @@
  		}
  	}
  	
- 	public function deleta($id)
+ 	public function remove($id)
  	{
  		$id = mysqli_real_escape_string($this->conn, $id);
- 		$query = "DELETE FROM fornecedores WHERE forn_id = {$id}";
- 		mysqli_query($this->conn, $query);
+ 		if($this->verificaFornecedor($id))
+ 		{
+	 		$query = "DELETE FROM fornecedores WHERE forn_id = {$id}";
+	 		return mysqli_query($this->conn, $query);
+ 		}
+ 		else
+ 		{
+ 			return false;
+ 		}
  	}
  }
