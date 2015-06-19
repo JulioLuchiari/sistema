@@ -7,6 +7,8 @@
 <body>
 	<div class="main">
 		<h1 class="titulo"><?php echo $titulo ?></h1>
+		<?php mostraAlerta("sucesso")?>
+		<?php mostraAlerta("erro")?>
 		<?php echo $conteudo ?>
 	</div>
 </body>

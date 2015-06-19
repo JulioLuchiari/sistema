@@ -61,3 +61,45 @@ a:focus
 	margin: 1em 0;
 	background-color: #CCC;
 }
+
+.input-small
+{
+	width: 60px;
+}
+
+.btn-submit
+{
+	background-color: rgb(35, 35, 195);
+	border: none;
+	padding: .75em;
+	margin: .25em 0;
+	color: #FFF;
+}
+
+.btn-submit:hover,
+.btn-submit:focus
+{
+	background-color: rgb(55, 55, 225);
+	cursor: pointer;
+}
+
+fieldset
+{
+	margin: 1em 0;
+}
+
+legend
+{
+	font-weight: bold;
+}
+
+fieldset input,
+fieldset label
+{
+	margin: .5em 0;
+}
+
+fieldset label
+{
+	margin-left: .5em;
+}
