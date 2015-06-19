@@ -5,7 +5,9 @@
 	<link rel="stylesheet" href="content/css/template.css">
 </head>
 <body>
-	<h1 class="titulo"><?php echo $titulo ?></h1>
-	<?php echo $conteudo ?>
+	<div class="main">
+		<h1 class="titulo"><?php echo $titulo ?></h1>
+		<?php echo $conteudo ?>
+	</div>
 </body>
 </html>

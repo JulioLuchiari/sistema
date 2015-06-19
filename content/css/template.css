@@ -22,3 +22,42 @@
 	padding: .5em;
 	color: #000;
 }
+
+.table
+{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table th, 
+.table td
+{
+	padding: .5em;
+	border: 1px solid #e2e2e2;
+	text-align: center;
+}
+
+.table th
+{
+	background-color: #CCC;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+a:hover,
+a:focus
+{
+	text-decoration: underline;
+}
+
+.action-top
+{
+	display: block;
+	text-align: center;
+	padding: 1em;
+	margin: 1em 0;
+	background-color: #CCC;
+}

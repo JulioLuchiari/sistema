@@ -30,4 +30,74 @@ class Fornecedor
 		$this->telefone = $telefone;
 		$this->email = $email;
 	}
+	
+	public function setId($id)
+	{
+		$this->id = $id;
+	}
+	
+	public function getId()
+	{
+		return $this->id;
+	}
+	
+	public function getCnpj()
+	{
+		return $this->cnpj;
+	}
+	
+	public function getRazaoSocial()
+	{
+		return $this->razaoSocial;
+	}
+	
+	public function getRua()
+	{
+		return $this->rua;
+	}
+	
+	public function getNumero()
+	{
+		return $this->numero;
+	}
+	
+	public function getBairro()
+	{
+		return $this->bairro;
+	}
+	
+	public function getCidade()
+	{
+		return $this->cidade;
+	}
+	
+	public function getUf()
+	{
+		return $this->uf;
+	}
+	
+	public function getPais()
+	{
+		return $this->pais;
+	}
+	
+	public function getCep()
+	{
+		return $this->cep;
+	}
+	
+	public function getComplemento()
+	{
+		return $this->complemento;
+	}
+	
+	public function getTelefone()
+	{
+		return $this->telefone;
+	}
+	
+	public function getEmail()
+	{
+		return $this->email;
+	}
 }
