@@ -43,13 +43,13 @@ function validaCep($cep)
 
 function validaEmail($email)
 {
-	if(strlen($email) < 5)
+	if (ereg('^([a-zA-Z0-9.-])*([@])([a-z0-9])*([.])([a-z])', $email))
 	{
-		return false;
+		return true;
 	}
 	else
 	{
-		return true;
+		return false;
 	}
 }
 
