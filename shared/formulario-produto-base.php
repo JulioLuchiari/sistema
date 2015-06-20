@@ -1,6 +1,6 @@
 <?php 
 //evita acesso direto a url
-if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
+if (eregi("formulario-produto-base.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
 	die();
