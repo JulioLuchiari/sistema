@@ -1,6 +1,6 @@
 <?php
 require_once '../config.php';
-require_once '../DAO/fornecedorDAO.php';
+require_once '../DAO/produtoDAO.php';
 
 if(isset($_POST['id']))
 {
