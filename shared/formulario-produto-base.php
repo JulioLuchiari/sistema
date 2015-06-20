@@ -22,7 +22,7 @@ $fornecedores = $fornDao->buscaTodos();
 	<label for="nome">Nome: </label>
 	<input type="text" name="nome" id="nome" required value="<?php echo $produto->getNome()?>">
 	
-	<label for="preco">PreÃ§o: </label>
+	<label for="preco">Preço: </label>
 	<input type="number" min="0" step="0.01" name="preco" id="preco" required class="input-small" value="<?php echo $produto->getValorUnitario()?>">
 	
 	<label for="preco">Desconto: </label>
@@ -35,14 +35,14 @@ $fornecedores = $fornDao->buscaTodos();
 <fieldset>
 	<legend>Tipo</legend>
 	<label>
-		PerecÃ­vel: <input type="radio" value="perecivel" name="tipo" checked>
+		Perecível: <input type="radio" value="perecivel" name="tipo" checked>
 	</label>
 	<label>
-		NÃ£o PerecÃ­vel: <input type="radio" value="nao perecivel" name="tipo">
+		NÃ£o Perecível: <input type="radio" value="nao perecivel" name="tipo">
 	</label>
 </fieldset>
 
 <fieldset>
-	<legend>DescriÃ§Ã£o</legend>
+	<legend>Descrição</legend>
 	<textarea name="descricao" required><?php echo $produto->getDescricao()?></textarea>
 </fieldset>

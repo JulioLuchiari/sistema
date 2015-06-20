@@ -90,18 +90,6 @@ class Produto
 	public function setTipo($tipo)
 	{
 		$this->tipo = $tipo;
-		if($tipo === "perecivel")
-		{
-			$tipo = TipoEnum::PERECIVEL;
-		}
-		elseif($tipo === "nao perecivel")
-		{
-			$tipo = TipoEnum::NAO_PERECIVEL;
-		}
-		else
-		{
-			throw new Exception();
-		}
 	}
 	
 	public function getTipo()

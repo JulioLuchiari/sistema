@@ -22,12 +22,12 @@ $f = $dao->busca($id);
 
 <div class="listar">
 	<p>CNPJ: <?php echo formataCnpj($f->getCnpj())?></p>
-	<p>Raz√£o Social: <?php echo $f->getRazaoSocial()?></p>
+	<p>Raz„o Social: <?php echo $f->getRazaoSocial()?></p>
 	
 	<p>CEP: <?php echo formataCep($f->getCep())?></p>
-	<p>Endere√ßo: <?php echo formataEndereco($f->getRua(), $f->getNumero(), $f->getBairro(), $f->getCidade(), $f->getUf())?></p>
+	<p>EndereÁo: <?php echo formataEndereco($f->getRua(), $f->getNumero(), $f->getBairro(), $f->getCidade(), $f->getUf())?></p>
 	<p>Complemento: <?php echo $f->getComplemento()?></p>
-	<p>Pa√≠s: <?php echo $f->getPais()?></p>
+	<p>PaÌs: <?php echo $f->getPais()?></p>
 	
 	<p>Telefone: <?php echo formataTelefone($f->getTelefone())?></p>
 	<p>E-Mail: <?php echo $f->getEmail()?></p>

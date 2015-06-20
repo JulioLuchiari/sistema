@@ -55,6 +55,7 @@ class ProdutoDAO
  			$p->setDesconto($a['prod_desconto']);
  			$p->setValorUnitario($a['prod_valorunit']);
  			$p->setQtdEstoque($a['prod_qtdestoque']);
+ 			$p->setTipo($a['prod_tipo']);
  		
  			array_push($produtos, $p);
  		}
@@ -77,6 +78,7 @@ class ProdutoDAO
  			$produto->setValorUnitario($a['prod_valorunit']);
  			$produto->setQtdEstoque($a['prod_qtdestoque']);
  			$produto->setFornId($a['forn_id']);
+ 			$produto->setTipo($a['prod_tipo']);
  			
  			return $produto;
  		}

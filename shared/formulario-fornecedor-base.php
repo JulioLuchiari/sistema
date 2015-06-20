@@ -4,12 +4,12 @@
 	<label for="cnpj">CNPJ:</label>
 	<input type="text" id="cnpj" name="cnpj" required value="<?php echo $fornecedor->getCnpj()?>">
 	
-	<label for="razao-social">Razao Social:</label>
+	<label for="razao-social">Razão Social:</label>
 	<input type="text" id="razao-social" name="razao-social" required value="<?php echo $fornecedor->getRazaoSocial()?>">
 </fieldset>
 
 <fieldset>
-	<legend>EndereÃ§o</legend>
+	<legend>Endereço</legend>
 	
 	<label for="cep">CEP:</label>
 	<input type="text" id="cep" name="cep" required value="<?php echo $fornecedor->getCep()?>"><br>
@@ -17,7 +17,7 @@
 	<label for="rua">Rua:</label>
 	<input type="text" id="rua" name="rua" required value="<?php echo $fornecedor->getRua()?>">
 	
-	<label for="numero">Numero:</label>
+	<label for="numero">Número:</label>
 	<input type="number" id="numero" name="numero" min="0" class="input-small" required value="<?php echo $fornecedor->getNumero()?>">
 	
 	<label for="complemento">Complemento:</label>
@@ -32,7 +32,7 @@
 	<label for="uf">UF:</label>
 	<input type="text" id="uf" name="uf" class="input-small" required value="<?php echo $fornecedor->getUf()?>">
 	
-	<label for="pais">PaÃ­s:</label>
+	<label for="pais">País:</label>
 	<input type="text" id="pais" name="pais" required value="<?php echo $fornecedor->getPais()?>">		
 </fieldset>
 

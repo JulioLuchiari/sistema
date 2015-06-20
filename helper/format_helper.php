@@ -47,3 +47,11 @@ function formataPreco($numero)
 {
 	return "R$ ".number_format($numero, 2, ",", ".");
 }
+
+function formataPrecoComDesconto($valor, $desconto)
+{
+	$desconto /= 100;
+	$valorDescontado = $valor * $desconto;
+	$valorTotal = $valor - $valorDescontado;
+	return formataPreco($valorTotal);
+}

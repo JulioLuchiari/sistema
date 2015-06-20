@@ -1,4 +1,4 @@
-@CHARSET "UTF-8";
+@CHARSET "ISO-8859-1";
 
 *{
 	margin: 0;
@@ -40,6 +40,15 @@
 .table th
 {
 	background-color: #CCC;
+}
+
+.small-table
+{
+	width: 50%;
+}
+.small-table td
+{
+	background-color: #FFF;
 }
 
 a

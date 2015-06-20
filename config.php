@@ -1,5 +1,5 @@
 <?php
-header("Content-type: text/html; charset=utf-8");
+header("Content-type: text/html; charset=iso-8859-1");
 require_once 'helper/url_helper.php';
 require_once 'helper/mostra-alerta.php';
 require_once 'DAO/conecta.class.php';

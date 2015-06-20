@@ -17,7 +17,7 @@ $produtos = $dao->buscaTodos();
 <table class="table">
 	<tr>
 		<th>Nome</th>
-		<th>Valor Unitario</th>
+		<th>Valor Unitário</th>
 		<th>Valor de Venda</th>
 		<th>Quantidade em Estoque</th>
 		<th>Visualizar</th>

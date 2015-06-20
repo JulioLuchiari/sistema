@@ -18,7 +18,7 @@ $fornecedores = $dao->buscaTodos();
 <table class="table">
 	<tr>
 		<th>CNPJ</th>
-		<th>Razao Social</th>
+		<th>Razão Social</th>
 		<th>Cidade - UF</th>
 		<th>Telefone</th>
 		<th>Email</th>
