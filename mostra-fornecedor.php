@@ -21,16 +21,16 @@ $f = $dao->busca($id);
 </div>
 
 <div class="listar">
-	<p>CNPJ: <?php echo formataCnpj($f->getCnpj())?></p>
-	<p>Razão Social: <?php echo $f->getRazaoSocial()?></p>
+	<p><em>CNPJ:</em> <?php echo formataCnpj($f->getCnpj())?></p>
+	<p><em>Razão Social:</em> <?php echo $f->getRazaoSocial()?></p>
 	
-	<p>CEP: <?php echo formataCep($f->getCep())?></p>
-	<p>Endereço: <?php echo formataEndereco($f->getRua(), $f->getNumero(), $f->getBairro(), $f->getCidade(), $f->getUf())?></p>
-	<p>Complemento: <?php echo $f->getComplemento()?></p>
-	<p>País: <?php echo $f->getPais()?></p>
+	<p><em>CEP:</em> <?php echo formataCep($f->getCep())?></p>
+	<p><em>Endereço:</em> <?php echo formataEndereco($f->getRua(), $f->getNumero(), $f->getBairro(), $f->getCidade(), $f->getUf())?></p>
+	<p><em>Complemento:</em> <?php echo $f->getComplemento()?></p>
+	<p><em>País:</em> <?php echo $f->getPais()?></p>
 	
-	<p>Telefone: <?php echo formataTelefone($f->getTelefone())?></p>
-	<p>E-Mail: <?php echo $f->getEmail()?></p>
+	<p><em>Telefone:</em> <?php echo formataTelefone($f->getTelefone())?></p>
+	<p><em>E-Mail:</em> <?php echo $f->getEmail()?></p>
 </div>
 
 <form action="controller/remover-fornecedor.php" method="post">

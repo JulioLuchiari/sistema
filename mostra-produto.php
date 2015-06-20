@@ -25,13 +25,13 @@ $fornecedor = $fornDao->busca($p->getFornId());
 </div>
 
 <div class="listar">
-	<p>Produto: <?php echo $p->getNome()?></p>
-	<p>Fornecedor: <a href="mostra-fornecedor.php?id=<?php echo $p->getFornId()?>"><?php echo $fornecedor->getRazaoSocial()?></a></p>
-	<p>Tipo: <?php echo $p->getTipo()?></p>
-	<p>Valor Unitário: <?php echo formataPreco($p->getValorUnitario())?></p>
-	<p>Valor Venda: <?php echo formataPreco($p->getValorVenda())?></p>
-	<p>Valor com Desconto: <?php echo formataPrecoComDesconto($p->getValorVenda(), ($p->getDesconto()))?></p>
-	<p>Quantidade em Estoque: <?php echo $p->getQtdEstoque()?></p>
+	<p><em>Produto:</em> <?php echo $p->getNome()?></p>
+	<p><em>Fornecedor:</em> <a href="mostra-fornecedor.php?id=<?php echo $p->getFornId()?>"><?php echo $fornecedor->getRazaoSocial()?></a></p>
+	<p><em>Tipo:</em> <?php echo $p->getTipo()?></p>
+	<p><em>Valor Unitário:</em> <?php echo formataPreco($p->getValorUnitario())?></p>
+	<p><em>Valor Venda:</em> <?php echo formataPreco($p->getValorVenda())?></p>
+	<p><em>Valor com Desconto:</em> <?php echo formataPrecoComDesconto($p->getValorVenda(), ($p->getDesconto()))?></p>
+	<p><em>Quantidade em Estoque:</em> <?php echo $p->getQtdEstoque()?></p>
 	<table class="table small-table">
 		<tr>
 			<th>Valor de Compra</th>
@@ -43,7 +43,7 @@ $fornecedor = $fornDao->busca($p->getFornId());
 		</tr>
 	</table>
 	
-	<p>Descrição</p>
+	<p><em>Descrição</em></p>
 	<p><?php echo $p->getDescricao()?></p>
 </div>
 
