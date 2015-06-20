@@ -1,4 +1,9 @@
 <?php
+if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
+{
+	header("Location: ../index.php");
+	die();
+}
 
 function mostraAlerta($tipo)
 {

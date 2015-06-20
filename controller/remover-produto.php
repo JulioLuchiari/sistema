@@ -1,4 +1,10 @@
 <?php
+if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
+{
+	header("Location: ../index.php");
+	die();
+}
+
 require_once '../config.php';
 require_once '../DAO/produtoDAO.php';
 

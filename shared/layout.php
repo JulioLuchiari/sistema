@@ -1,4 +1,11 @@
-<?php require_once 'config.php';?>
+<?php 
+if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
+{
+	header("Location: ../index.php");
+	die();
+}
+require_once 'config.php';
+?>
 <html>
 <head>
 	<title><?php echo $titulo ?></title>

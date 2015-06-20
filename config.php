@@ -1,4 +1,10 @@
 <?php
+if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
+{
+	header("Location: index.php");
+	die();
+}
+
 header("Content-type: text/html; charset=iso-8859-1");
 require_once 'helper/url_helper.php';
 require_once 'helper/mostra-alerta.php';

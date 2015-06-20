@@ -1,4 +1,9 @@
 <?php 
+if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
+{
+	header("Location: ../index.php");
+	die();
+}
 require_once 'DAO/fornecedorDAO.php';
 $fornDao = new FornecedorDAO($conn);
 $fornecedores = $fornDao->buscaTodos();
@@ -38,7 +43,7 @@ $fornecedores = $fornDao->buscaTodos();
 		Perecível: <input type="radio" value="perecivel" name="tipo" checked>
 	</label>
 	<label>
-		NÃ£o Perecível: <input type="radio" value="nao perecivel" name="tipo">
+		Não Perecível: <input type="radio" value="nao perecivel" name="tipo">
 	</label>
 </fieldset>
 

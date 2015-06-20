@@ -1,4 +1,10 @@
 <?php
+if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
+{
+	header("Location: ../index.php");
+	die();
+}
+
 $cnpj = isset($_POST['cnpj']) ? ereg_replace('([^a-zA-Z0-9])', '', $_POST['cnpj']) : null;
 $razaoSocial = isset($_POST['razao-social']) ? $_POST['razao-social'] : null;
 $cep = isset($_POST['cep']) ? ereg_replace('([^0-9])', '', $_POST['cep']) : null;

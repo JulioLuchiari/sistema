@@ -1,4 +1,10 @@
 <?php
+if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
+{
+	header("Location: ../index.php");
+	die();
+}
+
 $nome = isset($_POST['nome']) ? $_POST['nome'] : null;
 $preco = isset($_POST['preco']) ? $_POST['preco'] : null;
 $desconto = isset($_POST['desconto']) ? $_POST['desconto'] : null;
