@@ -83,6 +83,23 @@ a:focus
 	cursor: pointer;
 }
 
+.btn-perigo
+{
+	background-color: rgb(195, 35, 35);
+	border: none;
+	padding: .75em;
+	margin: .25em 0;
+	color: #FFF;
+	float: right;
+}
+
+.btn-perigo:hover,
+.btn-perigo:focus
+{
+	background-color: rgb(235, 55, 55);
+	cursor: pointer;
+}
+
 fieldset
 {
 	margin: 1em 0;
@@ -102,4 +119,23 @@ fieldset label
 fieldset label
 {
 	margin-left: .5em;
+}
+
+.main
+{
+	overflow: hidden;
+}
+
+.listar
+{
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	padding: 1em;
+	background-color: #E2E2E2;
+}
+
+.listar p
+{
+	line-height: 1.9em;
+	font-size: 1.25em;
 }
