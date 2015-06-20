@@ -1,10 +1,10 @@
 <?php
 require_once 'config.php';
+require_once 'helper/validador-fornecedor.php';
 ob_start();
 $titulo = "Cadastrar Fornecedor";
 
-require_once 'helper/validador-fornecedor.php';
-
+//pega os dados da sessão, caso haja erros no formulários, já volta preenchido
 $fornecedor = retornaDados();
 ?>
 

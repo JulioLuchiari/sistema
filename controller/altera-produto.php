@@ -1,4 +1,5 @@
 <?php
+//evita acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
@@ -11,6 +12,7 @@ require_once '../helper/validadores.php';
 require_once '../helper/validador-produto.php';
 require_once 'post-produto.php';
 
+//verifica se o id está realmente sendo utilizado
 if(isset($_POST['id']))
 {
 	$id = $_POST['id'];
@@ -20,6 +22,7 @@ else
 	$erros += 1;
 }
 
+//verifica se contem erros
 if($erros > 0)
 {
 	$_SESSION['erro'] = "Dados incorretos, verifique e tente novamente";
@@ -27,6 +30,7 @@ if($erros > 0)
 	die();
 }
 
+//executa a alteração do produto
 $dao = new ProdutoDAO($conn);
 if($dao->altera($id, $produto))
 {

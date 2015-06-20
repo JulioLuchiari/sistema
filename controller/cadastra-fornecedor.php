@@ -1,4 +1,5 @@
 <?php
+//evita acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
@@ -11,6 +12,7 @@ require_once '../helper/validadores.php';
 require_once '../helper/validador-fornecedor.php';
 require_once 'post-fornecedor.php';
 
+//verifica se contem erros
 if($erros > 0)
 {
 	$_SESSION['erro'] = "Dados incorretos, verifique e tente novamente";
@@ -18,6 +20,7 @@ if($erros > 0)
 	die();
 }
 
+//executa a adição de um novo fornecedor
 $dao = new FornecedorDAO($conn);
 if($dao->salva($fornecedor))
 {

@@ -1,4 +1,5 @@
 <?php
+//evita acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
@@ -8,6 +9,7 @@ if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 require_once '../config.php';
 require_once '../DAO/fornecedorDAO.php';
 
+//verifica se o id está realmente sendo utilizado
 if(isset($_POST['id']))
 {
 	$id = $_POST['id'];
@@ -18,6 +20,7 @@ else
 	die();
 }
 
+//executa a deletação do fornecedor
 $dao = new FornecedorDAO($conn);
 if($dao->remove($id))
 {

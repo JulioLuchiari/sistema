@@ -18,6 +18,7 @@ else
 	die();
 }
 
+//executa a deletação do produto
 $dao = new ProdutoDAO($conn);
 if($dao->remove($id))
 {

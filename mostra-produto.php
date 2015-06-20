@@ -5,6 +5,8 @@ require_once 'DAO/produtoDAO.php';
 require_once 'DAO/fornecedorDAO.php';
 ob_start();
 $titulo = "Mostra Produto";
+
+//verifica se o id esta sendo utilizado
 if(!isset($_GET['id']))
 {
 	header("Location: produto.php");
@@ -12,11 +14,14 @@ if(!isset($_GET['id']))
 }
 
 $id = $_GET['id'];
+//inicializa a classe de lógica com a tabela produto
 $dao = new ProdutoDAO($conn);
-//produto
+//retorna o produto
 $p = $dao->busca($id);
 
+//inicializa a classe de lógica com a tabela fornecedores
 $fornDao = new FornecedorDAO($conn);
+//retorna o fornecedor
 $fornecedor = $fornDao->busca($p->getFornId());
 ?>
 

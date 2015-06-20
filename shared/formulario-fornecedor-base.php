@@ -1,4 +1,5 @@
 <?php 
+//evita acesso direto a url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");

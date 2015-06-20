@@ -1,10 +1,12 @@
 <?php
+//evita acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
 	die();
 }
 
+//classe Produto baseada nos campos da tabela produto
 class Produto
 {
 	private $id;
@@ -16,6 +18,8 @@ class Produto
 	private $valorVenda;
 	private $desconto;
 	private $qtdEstoque;
+	
+	//getters and setters
 	
 	public function setId($id)
 	{
@@ -57,6 +61,7 @@ class Produto
 		return $this->descricao;
 	}
 	
+	//adiciona o valor unitario junto com o valor da venda, com o "lucro" previsto de 30%
 	public function setValorUnitario($valorUnitario)
 	{
 		$this->valorUnitario = $valorUnitario;

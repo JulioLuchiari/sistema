@@ -1,10 +1,12 @@
 <?php
+//bloqueia acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
 	die();
 }
 
+//classe que faz acesso ao banco de dados de fornecedores
 class FornecedorDAO
 {
  	private $conn;
@@ -14,6 +16,7 @@ class FornecedorDAO
  		$this->conn = $conn;
  	}
  	
+ 	//busca e retorna todos os fornecedores
  	public function buscaTodos()
  	{
  		$fornecedores = array();
@@ -39,6 +42,7 @@ class FornecedorDAO
  		return $fornecedores;
  	}
  	
+ 	//busca e retorna o fornecedor pelo campo 'forn_id'
  	public function busca($id)
  	{
  		$id = mysqli_real_escape_string($this->conn, $id);
@@ -65,6 +69,7 @@ class FornecedorDAO
  		}
  	}
  	
+ 	//busca o fornecedor no banco de dados, se existir, o retorna, caso contrario retorna falso
  	public function verificaFornecedor($id)
  	{
  		$query = "SELECT * FROM fornecedores WHERE forn_id = '{$id}'";
@@ -80,6 +85,7 @@ class FornecedorDAO
  		}
  	}
  	
+ 	//grava um novo fornecedor no banco de dados
  	public function salva(Fornecedor $fornecedor)
  	{
  		$cnpj = mysqli_real_escape_string($this->conn, $fornecedor->getCnpj());
@@ -101,6 +107,7 @@ class FornecedorDAO
  		return mysqli_query($this->conn, $query);
  	}
  	
+ 	//altera um fornecedor no banco de dados
  	public function altera($id, Fornecedor $f)
  	{
  		$id = mysqli_real_escape_string($this->conn, $id);
@@ -133,6 +140,7 @@ class FornecedorDAO
  		}
  	}
  	
+ 	//remove um fornecedor do banco de dados
  	public function remove($id)
  	{
  		$id = mysqli_real_escape_string($this->conn, $id);

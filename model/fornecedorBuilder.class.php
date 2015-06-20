@@ -1,10 +1,12 @@
 <?php
+//evita acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
 	die();
 }
 
+//classe auxiliar para a criação da classe fornecedores, de acordo com o padrão de projeto Builder
 class FornecedorBuilder
 {
 	private $id;
@@ -53,6 +55,7 @@ class FornecedorBuilder
 		$this->email = $email;
 	}
 	
+	//"constrói" o fornecedor
 	public function build()
 	{
 		$fornecedor = new Fornecedor($this->cnpj, $this->razaoSocial, $this->rua, $this->numero, 

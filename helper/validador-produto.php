@@ -1,10 +1,12 @@
 <?php
+//bloqueia acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
 	die();
 }
 
+//retorna os dados preenchidos no formulario
 function retornaDados()
 {
 	if(!isset($_SESSION['cadastro_produto']))
@@ -18,6 +20,7 @@ function retornaDados()
 	return $produto;
 }
 
+//valida um preço qualquer
 function validaPreco($preco)
 {
 	if($preco <= 0)
@@ -30,6 +33,7 @@ function validaPreco($preco)
 	}
 }
 
+//valida um campo de textarea
 function validaDescricao($descricao)
 {
 	if(strlen($descricao) < 10)
@@ -42,6 +46,7 @@ function validaDescricao($descricao)
 	}
 }
 
+//valida o desconto de acordo com a regra de negócio
 function validaDesconto($desconto)
 {
 	if($desconto <= 0)

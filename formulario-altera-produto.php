@@ -4,6 +4,7 @@ require_once 'DAO/produtoDAO.php';
 ob_start();
 $titulo = "Alterar Produto";
 
+//verifica se o id esta sendo utilizado
 if(!isset($_GET['id']))
 {
 	header("Location: produto.php");
@@ -11,7 +12,9 @@ if(!isset($_GET['id']))
 }
 
 $id = $_GET['id'];
+//inicializa a classe de lógica com o banco de dados
 $dao = new ProdutoDAO($conn);
+//retorna o produto
 $produto = $dao->busca($id);
 ?>
 

@@ -1,11 +1,14 @@
 <?php 
+//evita acesso direto a url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
 	die();
 }
 require_once 'DAO/fornecedorDAO.php';
+//inicializa a classe de lógica com a tabela fornecedores
 $fornDao = new FornecedorDAO($conn);
+//retorna todos os fornecedores a serem utilizados no campo select
 $fornecedores = $fornDao->buscaTodos();
 ?>
 <fieldset>

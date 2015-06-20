@@ -1,10 +1,10 @@
 <?php
 require_once 'config.php';
+require_once 'helper/validador-produto.php';
 ob_start();
 $titulo = "Cadastrar Produto";
 
-require_once 'helper/validador-produto.php';
-
+//pega os dados da sessão, caso haja erros no formulários, já volta preenchido
 $produto = retornaDados();
 ?>
 

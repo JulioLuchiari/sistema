@@ -4,6 +4,7 @@ require_once 'DAO/fornecedorDAO.php';
 ob_start();
 $titulo = "Alterar Fornecedor";
 
+//verifica se o id esta sendo utilizado
 if(!isset($_GET['id']))
 {
 	header("Location: fornecedor.php");
@@ -11,7 +12,9 @@ if(!isset($_GET['id']))
 }
 
 $id = $_GET['id'];
+//inicializa a classe de lógica com o banco de dados
 $dao = new FornecedorDAO($conn);
+//retorna o fornecedor
 $fornecedor = $dao->busca($id);
 ?>
 

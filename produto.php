@@ -1,10 +1,12 @@
 <?php
 require_once 'config.php';
 require_once 'helper/format_helper.php';
+require_once 'DAO/produtoDAO.php';
 ob_start();
 $titulo = "Gerenciar Produtos";
-require_once 'DAO/produtoDAO.php';
+//inicializa a classe de lógica com a tabela produto
 $dao = new ProdutoDAO($conn);
+//retorna todos os produtos
 $produtos = $dao->buscaTodos();
 ?>
 

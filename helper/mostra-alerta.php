@@ -1,10 +1,12 @@
 <?php
+//bloqueia acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
 	die();
 }
 
+//mostra o alerta de acordo com o tipo ('erro' ou 'sucesso')
 function mostraAlerta($tipo)
 {
     if(isset($_SESSION[$tipo])) : ?>

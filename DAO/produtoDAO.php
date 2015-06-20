@@ -1,10 +1,12 @@
 <?php
+//bloqueia acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
 	die();
 }
 
+//classe que faz acesso ao banco de dados de produtos
 class ProdutoDAO
 {
  	private $conn;
@@ -14,6 +16,7 @@ class ProdutoDAO
  		$this->conn = $conn;
  	}
  	
+ 	//busca o produto no banco de dados, se existir, o retorna, caso contrario retorna falso
  	public function verificaProduto($id)
  	{
  		$query = "SELECT * FROM produto WHERE prod_id = '{$id}'";
@@ -29,6 +32,7 @@ class ProdutoDAO
  		}
  	}
  	
+ 	//grava um novo produto no banco de dados
  	public function salva(Produto $p)
  	{
  		$nome = mysqli_real_escape_string($this->conn, $p->getNome());
@@ -45,6 +49,7 @@ class ProdutoDAO
  		return mysqli_query($this->conn, $query);
  	}
  	
+ 	//busca e retorna todos os produtos
  	public function buscaTodos()
  	{
  		$produtos = array();
@@ -69,6 +74,7 @@ class ProdutoDAO
  		return $produtos;
  	}
  	
+ 	//busca e retorna o produto pelo campo 'prod_id'
  	public function busca($id)
  	{
  		$id = mysqli_real_escape_string($this->conn, $id);
@@ -94,6 +100,7 @@ class ProdutoDAO
  		}
  	}
  	
+ 	//altera um produto no banco de dados
  	public function altera($id, Produto $p)
  	{
  		$id = mysqli_real_escape_string($this->conn, $id);
@@ -121,6 +128,7 @@ class ProdutoDAO
  		}
  	}
  	
+ 	//remove um produto do banco de dados
  	public function remove($id)
  	{
  		$id = mysqli_real_escape_string($this->conn, $id);

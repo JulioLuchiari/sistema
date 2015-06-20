@@ -1,10 +1,12 @@
 <?php
+//bloqueia acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
 	die();
 }
 
+//formata um cep utilizando substring
 function formataCep($cep)
 {
 	$part1 = substr($cep, 0, 5);
@@ -13,6 +15,7 @@ function formataCep($cep)
 	return $cep;
 }
 
+//formata um telefone utilizando substring
 function formataTelefone($telefone)
 {
 	$part1 = substr($telefone, 0, 2);
@@ -31,12 +34,14 @@ function formataTelefone($telefone)
 	return $telefone;	
 }
 
+//formata um endereco com os parametros passados
 function formataEndereco($rua, $numero, $bairro, $cidade, $uf)
 {
 	$endereco = "{$rua}, {$numero} - {$bairro}, {$cidade} - {$uf}";
 	return $endereco;
 }
 
+//formata um cnpj utilizando substring
 function formataCnpj($cnpj)
 {
 	$part1 = substr($cnpj, 0, 2);
@@ -49,11 +54,13 @@ function formataCnpj($cnpj)
 	return $cnpj;
 }
 
+//formata um preço utilizando substring
 function formataPreco($numero)
 {
 	return "R$ ".number_format($numero, 2, ",", ".");
 }
 
+//formata um preço que contenha junto um desconto com valor inteiro de 0 a 100
 function formataPrecoComDesconto($valor, $desconto)
 {
 	$desconto /= 100;

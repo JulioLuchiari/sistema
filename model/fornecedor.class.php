@@ -1,10 +1,12 @@
 <?php
+//evita acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
 	die();
 }
 
+//classe Fornecedor baseada nos campos da tabela fornecedores
 class Fornecedor
 {
 	private $id;
@@ -41,6 +43,8 @@ class Fornecedor
 	{
 		$this->id = $id;
 	}
+	
+	//getters da classe
 	
 	public function getId()
 	{

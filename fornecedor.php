@@ -1,11 +1,13 @@
 <?php
 require_once 'config.php';
+require_once 'DAO/fornecedorDAO.php';
 require_once 'helper/format_helper.php';
 ob_start();
 $titulo = "Gerenciar Fornecedores";
-require_once 'DAO/fornecedorDAO.php';
 
+//inicializa a classe de lógica com o banco de dados
 $dao = new FornecedorDAO($conn);
+//retorna os fornecedores
 $fornecedores = $dao->buscaTodos();
 ?>
 

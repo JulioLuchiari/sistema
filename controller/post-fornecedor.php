@@ -1,10 +1,12 @@
 <?php
+//evita acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
 	die();
 }
 
+//verifica os campos e remove possíveis mascaras
 $cnpj = isset($_POST['cnpj']) ? ereg_replace('([^a-zA-Z0-9])', '', $_POST['cnpj']) : null;
 $razaoSocial = isset($_POST['razao-social']) ? $_POST['razao-social'] : null;
 $cep = isset($_POST['cep']) ? ereg_replace('([^0-9])', '', $_POST['cep']) : null;
@@ -18,13 +20,15 @@ $pais = isset($_POST['pais']) ? $_POST['pais'] : null;
 $email = isset($_POST['email']) ? $_POST['email'] : null;
 $telefone = isset($_POST['telefone']) ? ereg_replace('([^0-9])', '', $_POST['telefone']) : null;
 
+//inicializada a variável de erros
 $erros = 0;
 
-$fornecedor = new Fornecedor($cnpj, $razaoSocial, $rua, $numero, $complemento, $cep, $bairro, $cidade, $uf, $pais, $telefone, $email);
 
-//armazena o fornecedor na sessÃ£o, caso haja algum erro, o formulario estarÃ¡ preenchido com os dados da sessÃ£o
+$fornecedor = new Fornecedor($cnpj, $razaoSocial, $rua, $numero, $complemento, $cep, $bairro, $cidade, $uf, $pais, $telefone, $email);
+//armazena o fornecedor na sessão, caso haja algum erro, o formulario estará preenchido com os dados da sessão
 $_SESSION['cadastro_fornecedor'] = $fornecedor;
 
+//valida os campos
 if(!validaCnpj($cnpj) || !validaNome($razaoSocial))
 {
 	$erros += 1;

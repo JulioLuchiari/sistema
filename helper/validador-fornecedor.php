@@ -1,10 +1,12 @@
 <?php
+//bloqueia acesso direto pela url
 if (eregi("produto.class.php", $_SERVER['SCRIPT_NAME']))
 {
 	header("Location: ../index.php");
 	die();
 }
 
+//retorna os dados preenchidos no formulario
 function retornaDados()
 {
 	if(!isset($_SESSION['cadastro_fornecedor']))
@@ -18,6 +20,7 @@ function retornaDados()
 	return $fornecedor;
 }
 
+//valida um cnpj
 function validaCnpj($cnpj)
 {
 	$cnpj = ereg_replace("([^a-zA-Z0-9])", "", $cnpj);
@@ -31,6 +34,7 @@ function validaCnpj($cnpj)
 	}
 }
 
+//valida um cep
 function validaCep($cep)
 {
 	if(strlen($cep) != 8)
@@ -47,6 +51,7 @@ function validaCep($cep)
 	}
 }
 
+//valida um email
 function validaEmail($email)
 {
 	if (ereg('^([a-zA-Z0-9.-])*([@])([a-z0-9])*([.])([a-z])', $email))
@@ -59,6 +64,7 @@ function validaEmail($email)
 	}
 }
 
+//valida uma UF
 function validaUf($uf)
 {
 	if(strlen($uf) != 2)
