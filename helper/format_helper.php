@@ -42,3 +42,8 @@ function formataCnpj($cnpj)
 	$cnpj = "{$part1}.{$part2}.{$part3}/{$part4}-{$part5}";
 	return $cnpj;
 }
+
+function formataPreco($numero)
+{
+	return "R$ ".number_format($numero, 2, ",", ".");
+}

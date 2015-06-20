@@ -1,6 +1,6 @@
 <?php
- class FornecedorDAO
- {
+class FornecedorDAO
+{
  	private $conn;
  	
  	public function __construct($conn)
@@ -140,4 +140,4 @@
  			return false;
  		}
  	}
- }
+}

@@ -88,7 +88,7 @@ a:focus
 	background-color: rgb(195, 35, 35);
 	border: none;
 	padding: .75em;
-	margin: .25em 0;
+	margin: .5em 0;
 	color: #FFF;
 	float: right;
 }
@@ -111,14 +111,31 @@ legend
 }
 
 fieldset input,
-fieldset label
+fieldset label,
+fieldset select
 {
 	margin: .5em 0;
 }
 
-fieldset label
+fieldset label,
+fieldset select
 {
 	margin-left: .5em;
+}
+
+fieldset select
+{
+	min-width: 150px;
+}
+
+textarea
+{
+	width: 40%;
+	height: 150px;
+	max-width: 80%;
+	max-height: 300px;
+	margin: .5em;
+	padding: .5em;
 }
 
 .main
@@ -138,4 +155,18 @@ fieldset label
 {
 	line-height: 1.9em;
 	font-size: 1.25em;
+}
+
+.erro
+{
+	color: rgb(155, 35, 35);
+	background-color: rgb(255, 155, 155);
+	text-align: center;
+}
+
+.sucesso
+{
+	color: rgb(35, 155, 35);
+	background-color: rgb(155, 255, 155);
+	text-align: center;
 }

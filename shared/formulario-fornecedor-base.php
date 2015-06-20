@@ -1,8 +1,8 @@
 <fieldset>
-		<legend>Dados da empresa</legend>
-		
-		<label for="cnpj">CNPJ:</label>
-		<input type="text" id="cnpj" name="cnpj" required value="<?php echo $fornecedor->getCnpj()?>">
+	<legend>Dados da empresa</legend>
+	
+	<label for="cnpj">CNPJ:</label>
+	<input type="text" id="cnpj" name="cnpj" required value="<?php echo $fornecedor->getCnpj()?>">
 	
 	<label for="razao-social">Razao Social:</label>
 	<input type="text" id="razao-social" name="razao-social" required value="<?php echo $fornecedor->getRazaoSocial()?>">

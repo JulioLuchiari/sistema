@@ -1,6 +1,6 @@
 <?php
 interface TipoEnum
 {
-	const PERECIVEL = '1';
-	const NAO_PERECIVEL = '2';
+	const PERECIVEL = 'perecivel';
+	const NAO_PERECIVEL = 'nao perecivel';
 }

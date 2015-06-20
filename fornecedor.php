@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+require_once 'helper/format_helper.php';
 ob_start();
 $titulo = "Gerenciar Fornecedores";
 require_once 'DAO/fornecedorDAO.php';
@@ -7,6 +8,8 @@ require_once 'DAO/fornecedorDAO.php';
 $dao = new FornecedorDAO($conn);
 $fornecedores = $dao->buscaTodos();
 ?>
+
+<a href="index.php">Voltar para pagina principal</a>
 
 <div class="action-top">
 	<a href="formulario-fornecedor.php">Cadastrar fornecedor</a>
@@ -24,10 +27,10 @@ $fornecedores = $dao->buscaTodos();
 	</tr>
 	<?php foreach ($fornecedores as $fornecedor): ?>
 		<tr>
-			<td><?php echo $fornecedor->getCnpj()?></td>
+			<td><?php echo formataCnpj($fornecedor->getCnpj())?></td>
 			<td><?php echo $fornecedor->getRazaoSocial()?></td>
 			<td><?php echo $fornecedor->getCidade()." - ".$fornecedor->getUf()?></td>
-			<td><?php echo $fornecedor->getTelefone()?></td>
+			<td><?php echo formataTelefone($fornecedor->getTelefone())?></td>
 			<td><?php echo $fornecedor->getEmail()?></td>
 			<td><a href="mostra-fornecedor.php?id=<?php echo $fornecedor->getId()?>">Visualizar</a></td>
 			<td><a href="formulario-altera-fornecedor.php?id=<?php echo $fornecedor->getId()?>">Alterar</a></td>
