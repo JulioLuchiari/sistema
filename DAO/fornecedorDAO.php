@@ -115,10 +115,10 @@
  			$telefone = mysqli_real_escape_string($this->conn, $f->getTelefone());
  			$email = mysqli_real_escape_string($this->conn, $f->getEmail());
  			
- 			$query = "UPDATE fornecedores SET forn_cnpj = '{$cnpj}' AND forn_razaosoc = '{$razaoSocial}' AND forn_rua = '{$rua}' "
- 					."AND forn_numero = '{$numero}' AND forn_complemento = '{$complemento}' AND forn_cep = '{$cep}' AND forn_bairro = '{$bairro}' "
- 					."AND forn_cidade = '{$cidade}' AND forn_uf = '{$uf}' AND forn_pais = '{$pais}' AND forn_fone = '{$telefone}' "
- 					."AND forn_email = '{$email}' WHERE forn_id = {$id}";
+ 			$query = "UPDATE fornecedores SET forn_cnpj = '{$cnpj}', forn_razaosoc = '{$razaoSocial}', forn_rua = '{$rua}', "
+ 					."forn_numero = '{$numero}', forn_complemento = '{$complemento}', forn_cep = '{$cep}', forn_bairro = '{$bairro}', "
+ 					."forn_cidade = '{$cidade}', forn_uf = '{$uf}', forn_pais = '{$pais}', forn_fone = '{$telefone}', "
+ 					."forn_email = '{$email}' WHERE forn_id = {$id}";
  			return mysqli_query($this->conn, $query);
  		}
  		else
