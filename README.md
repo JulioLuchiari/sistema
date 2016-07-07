@@ -1,3 +1,3 @@
-# sistema
+# Sistema Násico de Produtos x Fornecedores
 
-Sistema criado no processo seletivo do meu primeiro emprego ;)
+Criado para o processo seletivo do meu primeiro emprego ;)
